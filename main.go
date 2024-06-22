@@ -155,23 +155,33 @@ import (
 // func main() {
 
 // }
-func digitalRoot(x int) int {
+func sumDig(x int) int {
 	s := Itoa(x)
-	result := 0
+	sum := 0
 	for i := 0; i < len(s); i++ {
-		b := int(rune(s[i]))
-		result += b
+		b := Atoi(string(s[i]))
+		sum += b
 	}
-	if len(Itoa(result)) > 1 {
-		s1 := Itoa(result)
-		for i := 0; i < len(s1); i++ {
-			b := int(rune(s1[i]))
-			result += b
-		}
-
-	}
-	return result
+	return sum
 }
+func digitalRoot(n int)int {
+	if n < 10 {
+		return n
+	}
+	return digitalRoot(sumDig(n))
+}
+
+func main() {
+	args := os.Args[1:]
+	if len(args) == 0 {
+		return
+	}
+	s1 := args[0]
+	x := Atoi(s1)
+	r := digitalRoot(x)
+	fmt.Printf(" ...ni..%d\n", r)
+}
+
 func Itoa(n int) string {
 	var isNeg bool
 	if n < 0 {
@@ -189,17 +199,7 @@ func Itoa(n int) string {
 	}
 	return result
 }
-func main() {
-	args := os.Args[1:]
-	if len(args) == 0 {
-		return
-	}
-	s := args[0]
 
-	r := digitalRoot(s)
-	fmt.Printf(" ...ni..%d\n", r)
-
-}
 func Atoi(s string) int {
 	var isneg bool
 	result := 0
