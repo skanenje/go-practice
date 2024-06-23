@@ -2,9 +2,72 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
+// func compare(s1, s2 string) int {
+// 	for i := 0; i < min(len(s1), len(s2)); i++ {
+// 		if s1[i] < s2[i] {
+// 			return -1
+// 		} else if s1[i] > s2[i] {
+// 			return 1
+// 		}
+// 	}
+// 	if len(s1) < len(s2) {
+// 		return -1
+// 	} else if len(s1) > len(s2) {
+// 		return 1
+// 	} else {
+// 		return 0
+// 	}
+// }
+
+// func min(x, y int) int {
+// 	if x < y {
+// 		return x
+// 	}
+// 	return y
+// }
+
+// func main() {
+// 	fmt.Println(compare("Hello!", "Hello!"))
+// 	fmt.Println(compare("Salut!", "lut!"))
+// 	fmt.Println(compare("Ola!", "Ol"))
+// }
+
+// func compare(a, b string)int{
+
+// }
+// func caseChecker(r rune)bool{
+
+// }
+// func caseConvert(r rune) rune{
+
+// }
+// func alhaMir(){
+// 	args := os.Args[1:]
+// 	if len(args) == 0 {
+// 		return
+// 	}
+// 	s := args[0]
+// 	var str string
+// 	for _, v := range s {
+// 		if (v >= 'A' && v <= 'Z') && (v + 25) > 'Z' {
+// 			v = 'A' + ('Z' - v)
+// 			str += string(v)
+// 		}else if (v >= 'a' && v <= 'z') && (v + 25) > 'z' {
+// 			v = 'a' + ('z' - v)
+// 			str += string(v)
+// 		}else if (v < 'A' || v > 'Z') || v == ' ' {
+// 			str += string(v)
+
+// 		}
+
+// 	}
+// 	fmt.Println(str)
+// }
+// func main(){
+// 	alhaMir()
+// }
 // "os"
 // "fmt"
 
@@ -155,64 +218,64 @@ import (
 // func main() {
 
 // }
-func sumDig(x int) int {
-	s := Itoa(x)
-	sum := 0
-	for i := 0; i < len(s); i++ {
-		b := Atoi(string(s[i]))
-		sum += b
-	}
-	return sum
-}
-func digitalRoot(n int)int {
-	if n < 10 {
-		return n
-	}
-	return digitalRoot(sumDig(n))
-}
+// func sumDig(x int) int {
+// 	s := Itoa(x)
+// 	sum := 0
+// 	for i := 0; i < len(s); i++ {
+// 		b := Atoi(string(s[i]))
+// 		sum += b
+// 	}
+// 	return sum
+// }
+// func digitalRoot(n int)int {
+// 	if n < 10 {
+// 		return n
+// 	}
+// 	return digitalRoot(sumDig(n))
+// }
 
-func main() {
-	args := os.Args[1:]
-	if len(args) == 0 {
-		return
-	}
-	s1 := args[0]
-	x := Atoi(s1)
-	r := digitalRoot(x)
-	fmt.Printf(" ...ni..%d\n", r)
-}
+// func main() {
+// 	args := os.Args[1:]
+// 	if len(args) == 0 {
+// 		return
+// 	}
+// 	s1 := args[0]
+// 	x := Atoi(s1)
+// 	r := digitalRoot(x)
+// 	fmt.Printf(" ...ni..%d\n", r)
+// }
 
-func Itoa(n int) string {
-	var isNeg bool
-	if n < 0 {
-		isNeg = true
-		n = -n
-	}
-	result := ""
-	for n > 0 {
-		digit := n % 10
-		result = string(rune('0'+digit)) + result
-		n /= 10
-	}
-	if isNeg {
-		result = "-" + result
-	}
-	return result
-}
+// func Itoa(n int) string {
+// 	var isNeg bool
+// 	if n < 0 {
+// 		isNeg = true
+// 		n = -n
+// 	}
+// 	result := ""
+// 	for n > 0 {
+// 		digit := n % 10
+// 		result = string(rune('0'+digit)) + result
+// 		n /= 10
+// 	}
+// 	if isNeg {
+// 		result = "-" + result
+// 	}
+// 	return result
+// }
 
-func Atoi(s string) int {
-	var isneg bool
-	result := 0
-	for i, v := range s {
-		if i == 0 && v == '-' {
-			isneg = true
-		} else if v >= '0' && v <= '9' {
-			digit := int(v - '0')
-			result = result*10 + digit
-		}
-	}
-	if isneg {
-		result = -result
-	}
-	return result
-}
+// func Atoi(s string) int {
+// 	var isneg bool
+// 	result := 0
+// 	for i, v := range s {
+// 		if i == 0 && v == '-' {
+// 			isneg = true
+// 		} else if v >= '0' && v <= '9' {
+// 			digit := int(v - '0')
+// 			result = result*10 + digit
+// 		}
+// 	}
+// 	if isneg {
+// 		result = -result
+// 	}
+// 	return result
+// }
