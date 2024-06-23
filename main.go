@@ -1,9 +1,119 @@
 package main
 
 import (
-	"fmt"
+	"github.com/01-edu/z01"
 )
 
+// func main() {
+// 	s := os.Args[1]
+// 	fmt.Printf("%s\n", rrot13(s))
+// }
+// func rrot13(s string) string {
+// 	res := ""
+// 	for _, v := range s {
+// 		if (v >= 'a' && v <= 'z') && (v+13) > 'z' {
+// 			v = (v + 13) - 26
+
+// 		} else if (v >= 'a' && v <= 'z') && (v+13) <= 'z' {
+// 			v = (v + 13)
+
+// 		} else if (v >= 'A' && v <= 'Z') && (v+13) > 'Z' {
+// 			v = (v + 13) - 26
+
+// 		} else if (v >= 'A' && v <= 'Z') && (v+13) <= 'Z' {
+// 			v = (v + 13)
+
+// 		}
+// 		res += string(v)
+
+// 	}
+// 	return res
+// }
+// ####################################################################
+// func main(){
+// 	chunk2([]int{}, 10)
+// 	chunk2([]int{0, 1, 2, 3, 4, 5, 6, 7}, 0)
+// 	chunk2([]int{0, 1, 2, 3, 4, 5, 6, 7}, 3)
+// 	chunk2([]int{0, 1, 2, 3, 4, 5, 6, 7}, 5)
+// 	chunk2([]int{0, 1, 2, 3, 4, 5, 6, 7}, 4)
+// }
+// func chunk2(sl []int, sz int){
+// 	resStr := ""
+// 	if sz == 0 {
+// 		z01.PrintRune('\n')
+// 	}else {
+// 		if len(sl) == 0 {
+// 			z01.PrintRune('[')
+// 			z01.PrintRune(']')
+// 			z01.PrintRune('\n')
+// 		}else {
+// 			for _, n := range sl {
+// 				resStr+=itoa(n)
+// 			}
+// 			if len(resStr) < sz  {
+// 				// do something
+// 				z01.PrintRune('[')
+// 				z01.PrintRune('[')
+// 				for i, n := range resStr {
+// 					z01.PrintRune(n)	
+// 					if i == len(resStr)-1{
+// 						break
+// 					}
+// 					z01.PrintRune(' ')
+// 				}
+// 				z01.PrintRune(']')
+// 				z01.PrintRune(']')
+// 			}
+// 			quotient := len(resStr) / sz
+// 			rem := len(resStr) % sz
+// 			var asli []string
+// 			for quotient > 0 {
+// 				asli = append(asli, resStr[:sz])
+// 				resStr = resStr[sz:]
+// 				quotient--
+// 			}
+// 			if rem != 0 {
+// 				asli = append(asli, resStr[(len(resStr)-rem):])
+// 			}
+// 			z01.PrintRune('[')
+// 			for _, astr := range asli {
+// 				z01.PrintRune('[')
+// 				for i, n := range astr {
+// 					z01.PrintRune(n)	
+// 					if i == len(astr)-1{
+// 						break
+// 					}
+// 					z01.PrintRune(' ')
+// 				}
+// 				z01.PrintRune(']')
+// 			}
+// 			z01.PrintRune(']')
+// 			z01.PrintRune('\n')
+// 		}
+		
+// 	}
+	
+// }
+// func itoa(x int)string{
+// 	var isNeg bool
+// 	result := ""
+// 	if x < 0 {
+// 		isNeg = true
+// 		x = -x
+// 	}else if x == 0 {
+// 		return "0"
+// 	}
+// 	for x > 0 {
+// 		digit := x%10
+// 		result =  string(rune('0' + digit))+ result
+// 		x /=10
+// 	}
+// 	if isNeg{
+// 		result = "-"+result
+// 	}
+// 	return result
+// }
+// ####################################################################################3
 // func compare(s1, s2 string) int {
 // 	for i := 0; i < min(len(s1), len(s2)); i++ {
 // 		if s1[i] < s2[i] {
@@ -33,17 +143,8 @@ import (
 // 	fmt.Println(compare("Salut!", "lut!"))
 // 	fmt.Println(compare("Ola!", "Ol"))
 // }
-
-// func compare(a, b string)int{
-
-// }
-// func caseChecker(r rune)bool{
-
-// }
-// func caseConvert(r rune) rune{
-
-// }
-// func alhaMir(){
+// ##################################################################################3
+// func alphaMir(){
 // 	args := os.Args[1:]
 // 	if len(args) == 0 {
 // 		return
@@ -66,11 +167,11 @@ import (
 // 	fmt.Println(str)
 // }
 // func main(){
-// 	alhaMir()
+// 	alphaMir()
 // }
 // "os"
 // "fmt"
-
+// ################################################################################3
 // func ReduceInt(a []int, f func(int, int) int) {
 // 	var z int
 //  if len(a) > 0 {
@@ -101,6 +202,7 @@ import (
 // 	}
 // 	return result
 // }
+// #########################################################################3
 // func Atoi(s string)int {
 // 	var isneg bool
 // 	result := 0
@@ -122,21 +224,7 @@ import (
 // 	r := Atoi(s)
 // 	fmt.Printf("result ni .. %d\n", r)
 // }
-// func main() {
-// 	mul := func(acc int, cur int) int {
-// 		return acc * cur
-// 	}
-// 	sum := func(acc int, cur int) int {
-// 		return acc + cur
-// 	}
-// 	div := func(acc int, cur int) int {
-// 		return acc / cur
-// 	}
-// 	as := []int{500, 2}
-// 	ReduceInt(as, mul)
-// 	ReduceInt(as, sum)
-// 	ReduceInt(as, div)
-// }
+// ###################################################################################
 // func main(){
 //  	args := os.Args[1:]
 // 	if len(args) == 0{
@@ -170,6 +258,7 @@ import (
 // 	}
 // 	return s0
 // }
+// ################################################################################3
 // package main
 
 // import (
@@ -181,22 +270,22 @@ import (
 // 	var sli2 []int
 // 	if sz == 0 {
 // 		fmt.Println()
-// 	}else {
+// 	} else {
 // 		count := 0
-// 	for i := 0; i < len(sl); i++ {
-// 		sli2 = append(sli2, sl[i])
-// 		count++
-// 		if count == sz {
-// 			count = 0
-// 			sli1 = append(sli1, sli2)
-// 			sli2 = nil
-// 		}
+// 		for i := 0; i < len(sl); i++ {
+// 			sli2 = append(sli2, sl[i])
+// 			count++
+// 			if count == sz {
+// 				count = 0
+// 				sli1 = append(sli1, sli2)
+// 				sli2 = nil
+// 			}
 
-// 	}
-// 	if sli2 != nil {
-// 		sli1 = append(sli1, sli2)
-// 	}
-// 	fmt.Println(sli1)
+// 		}
+// 		if sli2 != nil {
+// 			sli1 = append(sli1, sli2)
+// 		}
+// 		fmt.Println(sli1)
 // 	}
 
 // }
@@ -208,6 +297,7 @@ import (
 // 	Chunk([]int{0, 1, 2, 3, 4, 5, 6, 7}, 4)
 // }
 
+// ############################################################################3
 // package main
 
 // import (
