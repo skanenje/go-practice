@@ -1,9 +1,94 @@
 package main
 
 import (
-	"github.com/01-edu/z01"
+	"fmt"
+	"os"
+	// "github.com/01-edu/z01"
 )
+// func main(){
+// 	args := os.Args[1:]
+// 	if len(args) == 0 {
+// 		return
+// 	}
+// 	if len(args) > 3 {
+// 		return
+// 	}
+// 	if args[1] != "+" && args[1] != "-" && args[1] != "/" && args[1] != "*" && args[1] != "%"  {
+// 		return
+// 	}
+// 	x,_ := atoi(args[0])
+// 	if x >= 9223372036854775807 || x <= -9223372036854775807 {
+// 		return
+// 	}
+// 	y,_ := atoi(args[2])
+// 	 if y >= 9223372036854775807 || y <= -9223372036854775807 {
+// 		return
+// 	}
+// 	switch args[1]{
+// 	case "+":
+// 		result := x + y 
+// 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
+// 	case "-":
+// 		result := x - y 
+// 		_,_ = os.Stdout.Write([]byte(itoa(result) + "\n"))
+// 	case "*":
+// 		result := x * y 
+// 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
+// 	case "/":
+// 		if y == 0 {
+// 			_,_ = os.Stdout.Write([]byte("No division by 0\n"))
+// 		}else {
+// 			result := x / y 
+// 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
+// 		}
+// 	case "%":
+// 		if y == 0 {
+// 			_,_ = os.Stdout.Write([]byte("No modulo by 0\n"))
+// 		}else {
+// 			result := x % y 
+// 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
+// 		}
+	
+// 	}
 
+// }
+// func itoa(x int) string{
+// 	var isneg bool 
+// 	result := ""
+// 	if x < 0 {
+// 		isneg = true
+// 		x = -x
+// 	}
+// 	for x > 0 {
+// 	    digit:= x % 10
+// 		result = string(rune('0' + digit)) + result
+// 		x /= 10
+// 	}
+// 	if isneg {
+// 		result = "-" + result
+// 	}
+// 	return result
+// }
+// func atoi(s string)(int, error){
+// 	var isneg bool 
+// 	result := 0
+// 	for i, n := range s {
+// 		if i == 0 && n == '-'{
+// 			isneg = true
+// 		}else if (n < '0' || n > '9') {
+// 			err := "Invalid number for conversion"
+// 			return 0, fmt.Errorf("Error:%s", err)
+
+// 		}else{
+// 			digit := int(rune(n - '0'))
+// 			result = result*10 + digit
+// 		}
+// 	}
+// 	if isneg {
+// 		result = -result
+// 	}
+// 	return result, nil
+// }
 // func main() {
 // 	s := os.Args[1]
 // 	fmt.Printf("%s\n", rrot13(s))
