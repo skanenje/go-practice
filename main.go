@@ -2,9 +2,158 @@ package main
 
 import (
 	"fmt"
-	"os"
-	// "github.com/01-edu/z01"
 )
+// func isPowerof(x, exp int)bool{
+// 	for x > 0{
+// 		if x%exp == 0{
+// 			return true
+// 		}
+// 		x /= exp
+// 	}
+// 	return false
+// }
+// func main(){
+// 	res := isPowerof(128, 2)
+// 	fmt.Println(res)
+// }
+// func main(){
+// 	args := os.Args[1:]
+// 	if len(args) != 2 {
+// 		return
+// 	}
+// 	s1 := args[0]
+// 	// s2 := args[1]
+// 	var letters1 map[rune]bool = make(map[rune]bool)
+// 	for _, v := range s1 {
+// 		letters1[v] = true
+		
+// 	}
+	// var letters2 map[rune]bool = make(map[rune]bool)
+	// for _, v := range s2 {
+	// 	if letters1[v] && !letters2[v]{
+	// 		letters2[v] = true
+	// 	}
+	// }
+// 	for _, v := range s1 {
+// 		if letters1[v]{
+// 			z01.PrintRune(v)
+// 			letters1[v] = false
+// 		}
+// 	}
+// 	z01.PrintRune('\n')
+// }
+// func main() {
+// 	args := os.Args[1:]
+// 	if len(args) != 2 {
+// 		return
+// 	}
+// 	s1 := args[0]
+// 	s2 := args[1]
+// 	var letters map[rune]bool = make(map[rune]bool)
+// 	for _, v := range s1 {
+// 		letters[v] = true
+// 	}
+// 	res := ""
+// 	for _, v := range s2 {
+// 		if letters[v] {
+// 			letters[v] = false
+// 			res += string(v)
+// 		}
+// 	}
+// 	fmt.Println(res)
+// }
+
+// func main(){
+// args := os.Args[1:]
+// if len(args) != 2 {
+// 	return
+// }
+// s1:=args[0]
+// s2:=args[1]
+// var letters map[rune]bool= make(map[rune]bool)
+
+// for _, v := range s1 {
+// 	letters[v] = true
+// }
+// var letters2 map[rune]int = make(map[rune]int)
+// for _, v := range s2 {
+// 	if letters[v]{
+// 		letters2[v]++
+// 	}
+// }
+// for _, v := range s1 {
+// 	if count, ok := letters2[v] ; ok && count > 0 {
+// 		z01.PrintRune(v)
+// 		letters2[v]--
+// 	}
+// }
+// z01.PrintRune('\n')
+// }
+// @@@@@@@@#########################################################################3
+// func main(){
+// 	args := os.Args[1:]
+// 	if len(args) != 3 {
+// 		return
+// 	}
+// 	search := args[1]
+// 	replace := args[2]
+// 	var s rune
+// 	if len(search) == 1 {for _, v := range search {s = v}}
+// 	var r rune
+// 	if len(replace) == 1 {for _, v := range replace {r = v}}
+// 	res := ""
+// 	if contains(args[0], search){
+// 		for _, v := range args[0] {
+// 			if v == s {
+// 				v = r
+// 			}
+// 			res += string(v)
+// 		}
+// 		fmt.Println(res)
+// 	}else {
+// 		fmt.Println(args[0])
+// 	}
+
+// }
+// func contains(s string, sub string)bool{
+// 	for _, v := range s {
+// 		if sub == string(v) {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
+//###################################################################################333
+// func FoldInt(f func(int, int)int, sl []int, ac int){
+// 	res := ac
+// 	for _, n := range sl {
+// 		res = f(res, n)
+// 	}
+// 	fmt.Println(res)
+// }
+// func main() {
+// 	table := []int{1, 2, 3}
+// 	ac := 93
+// 	FoldInt(Add, table, ac)
+// 	FoldInt(Mul, table, ac)
+// 	FoldInt(Sub, table, ac)
+// 	fmt.Println()
+
+// 	table = []int{0}
+// 	FoldInt(Add, table, ac)
+// 	FoldInt(Mul, table, ac)
+// 	FoldInt(Sub, table, ac)
+// }
+// func Add(a, b int)int{
+// 	return a + b
+// }
+// func Mul(a, b int)int{
+// 	return a * b
+// }
+// func Sub(a, b int)int {
+// 	return a - b
+// }
+// @##############################################################################
 // func main(){
 // 	args := os.Args[1:]
 // 	if len(args) == 0 {
@@ -26,34 +175,34 @@ import (
 // 	}
 // 	switch args[1]{
 // 	case "+":
-// 		result := x + y 
+// 		result := x + y
 // 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
 // 	case "-":
-// 		result := x - y 
+// 		result := x - y
 // 		_,_ = os.Stdout.Write([]byte(itoa(result) + "\n"))
 // 	case "*":
-// 		result := x * y 
+// 		result := x * y
 // 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
 // 	case "/":
 // 		if y == 0 {
 // 			_,_ = os.Stdout.Write([]byte("No division by 0\n"))
 // 		}else {
-// 			result := x / y 
+// 			result := x / y
 // 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
 // 		}
 // 	case "%":
 // 		if y == 0 {
 // 			_,_ = os.Stdout.Write([]byte("No modulo by 0\n"))
 // 		}else {
-// 			result := x % y 
+// 			result := x % y
 // 		_,_ = os.Stdout.Write([]byte(itoa(result)+ "\n"))
 // 		}
-	
+
 // 	}
 
 // }
 // func itoa(x int) string{
-// 	var isneg bool 
+// 	var isneg bool
 // 	result := ""
 // 	if x < 0 {
 // 		isneg = true
@@ -70,7 +219,7 @@ import (
 // 	return result
 // }
 // func atoi(s string)(int, error){
-// 	var isneg bool 
+// 	var isneg bool
 // 	result := 0
 // 	for i, n := range s {
 // 		if i == 0 && n == '-'{
@@ -89,10 +238,11 @@ import (
 // 	}
 // 	return result, nil
 // }
+// @#################################################################################
+
 // func main() {
 // 	s := os.Args[1]
 // 	fmt.Printf("%s\n", rrot13(s))
-// }
 // func rrot13(s string) string {
 // 	res := ""
 // 	for _, v := range s {
@@ -140,7 +290,7 @@ import (
 // 				z01.PrintRune('[')
 // 				z01.PrintRune('[')
 // 				for i, n := range resStr {
-// 					z01.PrintRune(n)	
+// 					z01.PrintRune(n)
 // 					if i == len(resStr)-1{
 // 						break
 // 					}
@@ -164,7 +314,7 @@ import (
 // 			for _, astr := range asli {
 // 				z01.PrintRune('[')
 // 				for i, n := range astr {
-// 					z01.PrintRune(n)	
+// 					z01.PrintRune(n)
 // 					if i == len(astr)-1{
 // 						break
 // 					}
@@ -175,9 +325,9 @@ import (
 // 			z01.PrintRune(']')
 // 			z01.PrintRune('\n')
 // 		}
-		
+
 // 	}
-	
+
 // }
 // func itoa(x int)string{
 // 	var isNeg bool
