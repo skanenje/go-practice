@@ -2,7 +2,57 @@ package main
 
 import (
 	"fmt"
+	"os"
+
+	"github.com/01-edu/z01"
 )
+// func printBits(x int){
+// 	res := ""
+// 	if x == 1 {
+// 		res += string(rune((x) + '0'))
+// 	}else if x == 0 {
+// 		res += string(rune((x) + '0'))
+// 	}else {
+// 		for x > 0 {
+// 			var n rune = rune((x%2) + '0')
+// 			res += string(n)
+// 			x /= 2
+// 		}
+// 	}
+	
+// 	for len(res) < 8 {
+// 		res += "0"
+// 		if len(res) == 8 {
+// 			break
+// 		}
+// 	}	
+// 	for i := len(res)-1; i >= 0; i-- {
+// 		z01.PrintRune(rune(res[i]))
+// 	}
+// 	z01.PrintRune('\n')
+	
+// }
+// func checkLength(s string)string{
+// 	str := s
+// 	if len(s) < 8 {
+// 		str += "0"
+// 	}
+// 	return checkLength(str)
+// }
+// func main(){
+
+// 	args := os.Args[1:]
+// 	if len(args) != 1 {
+// 		return
+// 	}
+// 	res, err := Atoi(args[0])
+// 	if err != nil {
+// 	  printBits(0)
+// 	}
+// 	printBits(res)
+	// resi := checkLength(resu)
+	
+// }
 // func isPowerof(x, exp int)bool{
 // 	for x > 0{
 // 		if x%exp == 0{
@@ -570,37 +620,39 @@ import (
 // 	fmt.Printf(" ...ni..%d\n", r)
 // }
 
-// func Itoa(n int) string {
-// 	var isNeg bool
-// 	if n < 0 {
-// 		isNeg = true
-// 		n = -n
-// 	}
-// 	result := ""
-// 	for n > 0 {
-// 		digit := n % 10
-// 		result = string(rune('0'+digit)) + result
-// 		n /= 10
-// 	}
-// 	if isNeg {
-// 		result = "-" + result
-// 	}
-// 	return result
-// }
+func Itoa(n int) string {
+	var isNeg bool
+	if n < 0 {
+		isNeg = true
+		n = -n
+	}
+	result := ""
+	for n > 0 {
+		digit := n % 10
+		result = string(rune('0'+digit)) + result
+		n /= 10
+	}
+	if isNeg {
+		result = "-" + result
+	}
+	return result
+}
 
-// func Atoi(s string) int {
-// 	var isneg bool
-// 	result := 0
-// 	for i, v := range s {
-// 		if i == 0 && v == '-' {
-// 			isneg = true
-// 		} else if v >= '0' && v <= '9' {
-// 			digit := int(v - '0')
-// 			result = result*10 + digit
-// 		}
-// 	}
-// 	if isneg {
-// 		result = -result
-// 	}
-// 	return result
-// }
+func Atoi(s string) (int, error) {
+	var isneg bool
+	result := 0
+	for i, v := range s {
+		if i == 0 && v == '-' {
+			isneg = true
+		} else if v < '0' && v > '9'{
+			return 0, fmt.Errorf("error converting; invalid number")
+		}else if v >= '0' && v <= '9' {
+			digit := int(v - '0')
+			result = result*10 + digit
+		}
+	}
+	if isneg {
+		result = -result
+	}
+	return result, nil
+}
