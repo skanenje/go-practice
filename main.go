@@ -5,6 +5,110 @@ import (
 	"os"
 	"github.com/01-edu/z01"
 )
+// ######################################## PRINT HEX#########################################	
+// var hex_map map[int]string = map[int]string{
+// 	0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9",
+// 	10: "a", 11: "b", 12: "c", 13: "d", 14: "e", 15: "f",
+// }
+
+// func toHex(x int) string {
+// 	if x == 0 {
+// 		return "0"
+// 	}
+// 	result := ""
+// 	for x > 0 {
+// 		rem := x % 16
+// 		result = hex_map[rem] + result
+// 		x /= 16
+// 	}
+// 	return result
+// }
+// func main() {
+// 	args := os.Args[1:]
+// 	if len(args) != 1 {
+// 		return
+// 	}
+// 	res := ""
+// 	n, err := atoi(args[0])
+// 	if err != nil {
+// 		fmt.Print(err.Error())
+// 	} else {
+// 		res = toHex(n)
+
+// 	}
+// 	fmt.Printf("%s\n", res)
+
+// }
+// func atoi(s string) (int, error) {
+// 	isneg := false
+// 	result := 0
+// 	if s == "0" {
+// 		return 0, nil
+// 	}
+// 	for i, v := range s {
+// 		if i == 0 && v == '-' {
+// 			isneg = true
+// 		} else if v < '0' || v > '9' {
+// 			return -1, fmt.Errorf("ERROR")
+// 		} else if v >= '0' && v <= '9' {
+// 			digit := int(v - '0')
+// 			result = result*10 + digit
+// 		}
+
+// 	}
+// 	if isneg {
+// 		result = -result
+// 	}
+// 	return result, nil
+// }
+// @####################################################### REPEAT ALPHA #########################################
+// func main() {
+// 	args := os.Args[1:]
+// 	if len(args) != 1 {
+// 		return
+// 	} else if args[0] == "" {
+// 		return
+// 	} else {
+// 		s := repeatAlpha(args[0])
+// 		fmt.Println(s)
+// 	}
+
+// }
+// func repeatAlpha(s string) string {
+// 	result := ""
+// 	// index := 0
+// 	for _, v := range s {
+// 		if (v >= 'a' && v <= 'z') || (v >= 'A' && v <= 'Z') {
+// 			index := int(v - 'a')
+// 			if v >= 'A' && v <= 'Z' {
+// 				index = int(v - 'A')
+// 			}
+// 			for i := 0; i <= index; i++ {
+// 				result += string(v)
+// 			}
+// 		} else {
+// 			result += string(v)
+// 		}
+
+// 	}
+// 	return result
+// }
+// @@@@################################################ REVERSE BITS ##########################
+// func reverse(oct byte)byte{
+// 	var result byte
+// 	for i := 0 ; i < 8 ; i++{
+// 		bit := (oct >> i) & 1
+
+// 		result |= bit << (7-i)
+// 	}
+// 	return result
+// }
+// func main(){
+// 	var b byte= 0b00100110
+// 	reversed := reverse(b)
+// 	fmt.Printf("reversed bytes is \n %0b\n", reversed)
+// }
+
 // ####################### UNION ################################
 // func main(){
 // 	args := os.Args[1:]
