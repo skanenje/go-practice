@@ -5,6 +5,117 @@ import (
 	"os"
 	"github.com/01-edu/z01"
 )
+// 33333##############################################################################################################
+// func fprime(x int){
+// 	if x == 0 {
+// 		return
+// 	}
+// 	var factors []int
+// 	for i := 2; i*i <= x; i++ {
+// 		for x%i == 0 {
+// 			factors = append(factors, i)
+// 			x /= i
+// 		}
+// 	}
+// 	if x > 1{
+// 		factors = append(factors, x)
+// 	}
+// 	for i, number := range factors {
+// 		printNumber(number)
+// 		if i < len(factors)-1{
+// 			z01.PrintRune('*')
+// 		}
+// 	}
+// 	z01.PrintRune('\n')
+// }
+// func printNumber(n int){
+// 	if n == 0{
+// 		z01.PrintRune('0')
+// 	}
+// 	var digits []rune
+// 	for n > 0 {
+// 		digits = append([]rune{rune(n%10 + '0')},digits...)
+// 		n /= 10
+// 	}
+// 	for _, v := range digits {
+// 		z01.PrintRune(v)
+// 	}
+// }
+// func main(){
+// 	args := os.Args
+// 	if len(args) != 2 {
+// 		return
+// 	}
+// 	n := Atoi(args[1])
+// 	if n == -1 || n == 1{
+// 		return
+// 	}else{
+// 		fprime(Atoi(args[1]))
+// 	}
+
+// }
+// func Atoi(s string)(int){
+// 	result := 0
+// 	for _, v := range s {
+// 		if (v>='a' && v<='z') || (v>='A' && v<='Z'){
+// 			return -1
+// 		}else {
+// 			digit := int(rune(v-'0'))
+// 			result = result*10 + digit
+// 		}
+// 	}
+// 	return result
+// }
+// ####################################################3 ADD PRIME SUM ################################################
+// func addPrimeSum(x int) int {
+// 	isPrime := make([]bool, x+1)
+// 	for i := 2; i <= x; i++ {
+// 		isPrime[i] = true
+// 	}
+
+// 	for i := 2; i*i <= x; i++ {
+// 		if isPrime[i] {
+// 			for j := i * i; j <= x; j += i {
+// 				isPrime[j] = false
+// 			}
+// 		}
+// 	}
+// 	result := 0
+// 	for i := 2; i <= x; i++ {
+// 		if isPrime[i] {
+// 			result += i
+// 		}
+// 	}
+// 	return result
+// }
+
+// func main() {
+// 	args := os.Args[1:]
+// 	if len(args) != 1 {
+// 		fmt.Println(0)
+// 		return
+// 	}
+// 	n, err := atio(args[0])
+// 	if err != nil {
+// 		fmt.Println(0)
+// 	}
+// 	fmt.Println(addPrimeSum(n))
+// }
+
+// func atio(s string) (int, error) {
+// 	result := 0
+// 	for i, v := range s {
+// 		if i == 0 && v == '-' {
+// 			return 0, nil
+// 		} else if v < '0' || v > '9' {
+// 			return 0, fmt.Errorf("error converting")
+// 		} else if v >= '0' && v <= '9' {
+// 			ditgit := int(rune(v - '0'))
+// 			result = result*10 + ditgit
+// 		}
+// 	}
+// 	return result, nil
+// }
 // ####################### UNION ################################
 // func main(){
 // 	args := os.Args[1:]
@@ -43,57 +154,58 @@ import (
 // 	fmt.Printf("Swapped byte:   %08b\n", swapped)
 // }
 // ################################## PIG LATIN ####################################
-// func main(){
-// 	args := os.Args[1:]
-// 	if len(args) != 1 {
-// 		return
-// 	}
-// 	s := args[0]
-// 	if containsVow(s){
-// 		res := piglatin(s)
-// 	fmt.Println(res)
-// 	}else {
-// 		fmt.Println("No Vowels")
-// 	}
-	
+// var vowels map[rune]bool = map[rune]bool{
+// 	'a' : true ,
+// 	'e' : true ,
+// 	'i' : true ,
+// 	'o' : true ,
+// 	'u' : true ,
+// 	'A' : true ,
+// 	'E' : true ,
+// 	'I' : true ,
+// 	'O' : true ,
+// 	'U' : true ,
 // }
-// func piglatin(s string)string{
-// 	res := ""
-// 	for i, v := range s {
-// 		if i == 0 && isVowel(v) {
-// 			res += s + "ay"
-// 		}else if isVowel(v){
-// 			res += s[i:] + s[:i] + "ay"
-// 		}
+// func isFirstAlpha(s string)bool{
 
-// 	}
-// 	return res
-// }
-// func isVowel(r rune)bool{
-// 	if r == 'a' ||  r == 'e' ||  r == 'i' ||  r == 'o' ||  r == 'u' || r == 'A' ||  r == 'E' ||  r == 'I' ||  r == 'O' ||  r == 'U' {
-// 		return true
-// 	}
-// 	return false
-// }
-// func containsVow(s string)bool{
-// 	var vowels map[string]bool = map[string]bool{
-// 		"a": true ,
-// 		"e": true ,
-// 		"i": true ,
-// 		"o": true ,
-// 		"u": true ,
-// 		"A": true ,
-// 		"E": true ,
-// 		"I": true ,
-// 		"O": true ,
-// 		"U": true ,
-// 	}
-// 	for _, v := range s {
-// 		if vowels[string(v)]{
+// 	for i, v := range s{
+// 		if i == 0 && vowels[v]{
 // 			return true
 // 		}
 // 	}
 // 	return false
+// }
+// func containsVow(s string)bool{
+// 	for _, v := range s {
+// 		if vowels[v]{
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
+// func pigLatin(s string) string{
+// 	res := ""
+// 	if isFirstAlpha(s){
+// 		res = s + "ay"
+// 	}else if containsVow(s){
+// 		for i, v := range s {
+// 			if vowels[v]{
+// 				res = s[i:] + s[:i] + "ay"
+// 			}
+// 		}
+// 	}else{
+// 		res = "No vowels"
+// 	}
+// 	return res
+// }
+// func main(){
+// 	args := os.Args[1:]
+// 	if len(args) != 1 {
+// 		 return
+// 	}
+// 	s := args[0]
+// 	res := pigLatin(s)
+// 	fmt.Println(res)
 // }
 // ########################   ROMAN NUMERALS ##################################
 // type romanNumerals []struct {
